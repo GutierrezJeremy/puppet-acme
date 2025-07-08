@@ -305,8 +305,6 @@ explicitly list the domain(s):
    }
 ~~~
 
-Please note that this functionality relies on an [undocumented feature of acme.sh](https://github.com/acmesh-official/acme.sh/pull/4384).
-
 ### DNS alias mode
 
 In order to use DNS alias mode, specify the domain name either in the `challenge_alias` or `domain_alias` parameter of your profile:
