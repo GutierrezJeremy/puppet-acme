@@ -17,11 +17,14 @@ Facter.add(:acme_certs) do
       end
       cn = cert.subject.to_a.find { |name, _, _| name == 'CN' }[1]
 
+      # disable the ruby3.1+ style of omitting the hash value for a while to keep compatibility
+      # rubocop:disable Style/HashSyntax
       certs[cert_name] = {
         crt: crt.strip,
         ca: ca.strip,
         cn: cn,
       }
+      # rubocop:enable Style/HashSyntax
     end
 
     certs
